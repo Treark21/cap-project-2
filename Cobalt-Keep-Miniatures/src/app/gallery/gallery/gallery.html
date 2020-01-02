@@ -1,0 +1,179 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  
+    <title>Cobalt Keep Miniatures</title>
+    <style>
+        @media (max-width: 415px) {
+            #header {
+                padding-top: 100px;
+            }
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            border-radius: 15px 50px;
+        }
+    </style>
+</head>
+  
+  
+  <!-- Toolbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#708090;">
+    <a class="navbar-brand" style="color: #0047AB;" routerLink="/" routerLinkActive="active">
+        <img src="https://image.freepik.com/free-vector/businessman-shouting-through-megaphone_23-2147511376.jpg"
+            width="30" height="30" class="d-inline-block align-top" alt="">
+        Cobalt Keep Miniatures
+    </a>
+    <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="my-nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link " style="color: #0047AB;"  routerLink="/" routerLinkActive="active" tabindex="-1"
+                aria-disabled="true">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " style="color: whitesmoke;" routerLink="/gallery" routerLinkActive="active" tabindex="-1"
+                    aria-disabled="true">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " style="color: #0047AB;" routerLink="/services" routerLinkActive="active" tabindex="-1"
+                    aria-disabled="true">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " style="color: #0047AB;" routerLink="/about-us" routerLinkActive="active" tabindex="-1"
+                    aria-disabled="true">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn" style="color: #0047AB;" routerLink="/contact" routerLinkActive="active" tabindex="-1"
+                    aria-disabled="true">Contact</a>
+            </li>
+  
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse navbars align-right" id="my-nav">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-items">
+                <a class="btn nav-link" style="color: #0047AB;" routerLink="/auth/login" routerLinkActive="active">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: #0047AB;" routerLink="/auth/register" routerLinkActive="active">Register</a>
+        </ul>
+    </div>
+  </nav>
+    <div id="header" class="jumbotron jumbotron-fluid"
+        style="background-image: url(https://i.pinimg.com/236x/4a/97/47/4a974709011f2b78c228ddcfc6dba7a2--black-templars-space-marine.jpg); background-size: 100%;">
+        <h1 class="display-4" style="text-align: center;"><strong>
+                Gallery
+            </strong></h1>
+        <p class="lead" style="text-align: center;"><strong>
+                Look at all this stuff we painted!
+            </strong></p>
+    </div>
+    <div class="space">
+
+    </div>
+    <!-- Body of page, having a bar that one can select to have the tags of the images to only show that type
+        with the 4 levels of paining and game being the tag, each image will have 2 tags, user can view the entire
+        page or modify using top bar to only see a selection 
+     -->
+    <ul>
+        <div class="container">
+            <div class="row" style="text-align: center;">
+                <a class="filter button" id="all" dataFilter="all" href="#">Show All</a>
+
+                <a class="filter button" id="level-1" dataFilter="level-1"href="#">Level 1</a>
+
+                <a class="filter button" id="level-2" dataFilter="level-2"href="#">Level 2</a>
+
+                <a class="filter button" id="level-3" dataFilter="level-3"href="#">Level 3</a>
+
+                <a class="filter button" id="level-4" dataFilter="level-4"href="#">Level 4</a>
+
+                <a class="filter button" id="40k" dataFilter="40k"href="#">Warhammer 40k</a>
+
+                <a class="filter button" id="aos" dataFilter="aos"href="#">Age of Sigmar</a>
+
+            </div>
+        </div>
+    </ul>
+
+    <div class="container">
+        <div id="gallery" class="row">
+            <img class="col-md-3 level-2 40k" src="https://i.imgur.com/uyxQZVk.jpg" alt="">
+            <img class="col-md-3 img-thumbnail level-1 40k"
+                src="https://www.warhammer-community.com/wp-content/uploads/2019/01/NYOpendayReveals-Jan5-ChaosReveal16jvfahe.jpg"
+                alt="">
+            <img class="col-md-3 level-3 aos" src="https://www.dhresource.com/albu_387149555_00/1.0x0.jpg" alt="">
+            <img class="col-md-3 level-4 aos"
+                src="http://4.bp.blogspot.com/-Qrvcf1iGKLk/U9vkoWxfWII/AAAAAAAAJoQ/ipI-8LReJsQ/s1600/GW+Stormclaw+Grukk+Face+Rippa.jpg"
+                alt="">
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script>
+            $(function () {
+                $('#all').click(function (e) {
+                    e.stopPropagation();
+                    $('.level-1').show();
+                    $('.level-2').show();
+                    $('.level-3').show();
+                    $('.level-4').show();
+                    $('.40k').show();
+                    $('.aos').show();
+
+                });
+                $('#level-1').click(function (e) {
+                    e.stopPropagation();
+                    $('.level-1').show();
+                    $('.level-2').hide();
+                    $('.level-3').hide();
+                    $('.level-4').hide();
+                    
+                });
+                $('#level-2').click(function (e) {
+                    e.stopPropagation();
+                    $('.level-1').hide();
+                    $('.level-2').show();
+                    $('.level-3').hide();
+                    $('.level-4').hide();
+                   
+                });
+                $('#level-3').click(function (e) {
+                    e.stopPropagation();
+                    $('.level-1').hide();
+                    $('.level-2').hide();
+                    $('.level-3').show();
+                    $('.level-4').hide();
+                  
+                });
+                $('#level-4').click(function (e) {
+                    e.stopPropagation();
+                    $('.level-1').hide();
+                    $('.level-2').hide();
+                    $('.level-3').hide();
+                    $('.level-4').show();
+                    
+                });
+                $('#40k').click(function (e) {
+                    e.stopPropagation();
+                    $('.40k').show();
+                    $('.aos').hide();
+                });
+                $('#aos').click(function (e) {
+                    e.stopPropagation();
+                    $('.40k').hide();
+                    $('.aos').show();
+                });
+            });
+        </script>
