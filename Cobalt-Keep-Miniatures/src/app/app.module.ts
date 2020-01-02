@@ -9,6 +9,7 @@ import { GalleryModule } from './gallery/gallery.module';
 import { AuthModule } from './auth/auth.module';
 import { AboutUsModule } from './about-us/about-us.module';
 import { ContactModule } from './contact/contact.module';
+import { DashboardModule } from './dashboard/dashboard.module'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactModule } from './contact/contact.module';
     GalleryModule,
     AuthModule,
     AboutUsModule,
-    ContactModule
+    ContactModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

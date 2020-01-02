@@ -9,8 +9,9 @@ angular.module('CobaltKeepMiniaturesApp')
 
         
 authCtrl.login = function (){
-    Auth.$signInWithEmailAndPassword(authCtrl.user.email, authCtrl.user.password).then(function (auth){
-      $state.go('home');
+    Auth.$signInWithEmailAndPassword(authCtrl.user.email, authCtrl.user.password).then(function (auth)
+    {
+      $state.go('dashboard-a');
     }, function (error){
       authCtrl.error = error;
     });

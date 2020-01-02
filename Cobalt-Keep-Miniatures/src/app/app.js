@@ -43,7 +43,7 @@ angular
         resolve: {
           requireNoAuth: function($state, Auth){
             return Auth.$requireSignIn().then(function(auth){
-              $state.go('home');
+              routerlink: '/';
             }, function(error){
               return;
             });
