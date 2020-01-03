@@ -13,7 +13,8 @@ import { GalleryRoutingModule } from './gallery-routing.module';
     GalleryRoutingModule
   ],
   declarations: [
-    GalleryComponent
+    GalleryComponent,
+    
   ]
 })
 export class GalleryModule {}

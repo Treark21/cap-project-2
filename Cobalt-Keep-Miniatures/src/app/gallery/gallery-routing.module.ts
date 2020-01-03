@@ -6,10 +6,12 @@ import { GalleryComponent }     from './gallery/gallery.component';
 
 
 
+
 const galleryRoutes: Routes = [
   {
     path: '',
     component: GalleryComponent,
+    
    
   }
 ];
