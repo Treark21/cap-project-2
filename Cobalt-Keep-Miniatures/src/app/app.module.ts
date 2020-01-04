@@ -12,6 +12,10 @@ import { ContactModule } from './contact/contact.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { CoreModule } from './core/core.module';
 import { UserProfileModule } from './user-profile/user-profile.module'
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { environment } from '../environments/environment';
+import { AuthenticationService } from './shared/authentication.service';
 
 @NgModule({
   declarations: [
@@ -30,10 +34,12 @@ import { UserProfileModule } from './user-profile/user-profile.module'
     DashboardModule,
     NgbModule,
     CoreModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     UserProfileModule
   ],
   providers: [
-    
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
