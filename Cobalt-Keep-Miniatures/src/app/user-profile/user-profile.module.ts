@@ -2,7 +2,7 @@ import { NgModule }       from '@angular/core';
 import { FormsModule }    from '@angular/forms';
 import { CommonModule }   from '@angular/common';
 
-import { UserProfileComponent }     from './user-profile.component';
+import { UserProfileComponent }     from './user-profile/user-profile.component';
 
 import { UserProfileRoutingModule } from './user-profile-routing.module';
 

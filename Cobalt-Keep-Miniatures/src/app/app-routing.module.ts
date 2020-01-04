@@ -10,7 +10,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { CommonModule } from '@angular/common';
 import { DashboardAComponent } from './dashboard/dashboard-a/dashboard-a.component';
 import { DashboardMComponent } from './dashboard/dashboard-m/dashboard-m.component';
-import { UserProfileComponent } from './user-profile/user-profile.component'
+import { UserProfileComponent } from './user-profile/user-profile/user-profile.component'
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
