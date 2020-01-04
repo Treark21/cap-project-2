@@ -158,11 +158,20 @@
 
         </ul>
     </div>
-    <div class="collapse navbar-collapse navbars align-right" id="my-nav">
+    <div class="collapse navbar-collapse navbars align-right" id="my-nav" *ngIf="!(authenticationService.userData | async)"> 
         <ul class="navbar-nav mx-auto">
             <li class="nav-items">
                 <a class=" nav-link" style="color: whitesmoke;" routerLink="/user-profile"
-                    routerLinkActive="active">Login</a>
+                    routerLinkActive="active">Login/Register</a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse navbars align-right" id="my-nav" *ngIf="(authenticationService.userData | async)"> 
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-items">
+                <a class=" nav-link" style="color: whitesmoke;" routerLink="/user-profile"
+                    routerLinkActive="active">User Profile</a>
             </li>
 
         </ul>
