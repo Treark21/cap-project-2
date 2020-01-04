@@ -9,11 +9,14 @@ import { GalleryModule } from './gallery/gallery.module';
 import { AuthModule } from './auth/auth.module';
 import { AboutUsModule } from './about-us/about-us.module';
 import { ContactModule } from './contact/contact.module';
-import { DashboardModule } from './dashboard/dashboard.module'
+import { DashboardModule } from './dashboard/dashboard.module';
+import { CoreModule } from './core/core.module';
+import { UserProfileModule } from './user-profile/user-profile.module'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,9 +28,13 @@ import { DashboardModule } from './dashboard/dashboard.module'
     AboutUsModule,
     ContactModule,
     DashboardModule,
-    NgbModule
+    NgbModule,
+    CoreModule,
+    UserProfileModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
