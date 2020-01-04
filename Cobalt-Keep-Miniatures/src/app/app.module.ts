@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { ServicesModule } from './services/services.module';
 import { GalleryModule } from './gallery/gallery.module';
-import { AuthModule } from './auth/auth.module';
 import { AboutUsModule } from './about-us/about-us.module';
 import { ContactModule } from './contact/contact.module';
 import { DashboardModule } from './dashboard/dashboard.module';
