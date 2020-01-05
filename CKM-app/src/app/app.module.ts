@@ -13,10 +13,13 @@ import { GalleryModule } from './gallery/gallery.module';
 import { AboutUsModule } from './about-us/about-us.module';
 import { ContactModule } from './contact/contact.module';
 import { UserProfileModule } from './user-profile/user-profile.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { UserProfileModule } from './user-profile/user-profile.module';
     GalleryModule,
     AboutUsModule,
     ContactModule,
-    UserProfileModule
+    UserProfileModule,
+    ReactiveFormsModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

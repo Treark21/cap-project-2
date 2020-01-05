@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from 'src/app/user-profile/authentication.service'
 
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.html',
@@ -9,6 +10,7 @@ import { AuthenticationService } from 'src/app/user-profile/authentication.servi
 export class ContactComponent {
   email: string;
   password: string;
+
   constructor(public authenticationService: AuthenticationService) { }
 
   signUp() {
@@ -27,5 +29,4 @@ export class ContactComponent {
   signOut() {
     this.authenticationService.SignOut();
   }
-
 }
