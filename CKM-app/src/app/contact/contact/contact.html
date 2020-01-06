@@ -11,6 +11,10 @@
             #header {
                 padding-top: 100px;
             }
+            #message {
+                margin-left: 0px;
+                width: 100%;
+            }
         }
         .center {
             display: block;
@@ -18,6 +22,20 @@
             margin-right: auto;
             width: 50%;
             border-radius: 15px 50px;
+        }
+        @media (min-width: 1200px) {
+            #message {
+                text-align: center;
+                width: 45%; 
+                margin-left: 300px;
+            }
+        }
+        @media (min-width: 990px) and (max-width: 1200px) {
+            #message {
+                text-align: center;
+                width: 45%; 
+                margin-left: 250px;
+            }
         }
     </style>
 </head>
@@ -89,7 +107,48 @@
                 Please use the links below to get in contact with our team
             </strong></p>
     </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="text-align: center;">
+            <h3><strong>Community & links</strong></h3>
+            <span>Find us on <a style="color:rgb(111, 0, 255)"
+                href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> as well as on <a
+                    style="color:orange" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> to see
+                our previous works as well as links to the communities we are apart of.</span>
+        </div>
+        <div class="d-flex col-md-6">
+            <img
+                src="https://i.pinimg.com/236x/4a/97/47/4a974709011f2b78c228ddcfc6dba7a2--black-templars-space-marine.jpg" class="center" />
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <h1><strong>Message us directly!</strong></h1>
+        <div class="row">
+            <div id="message">
+                <span>If you have any questions that we may not have answered please do use the form below to send a message directly to our team!</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div  style="display: block;">
+            <input style="display:table-cell; width:100%; align-self: center;" type="text" placeholder="Name*" required="" [(ngModel)]="name">
+        </div>
+        <div  style="display: block;">
+            <input style="display:table-cell; width:100%" type="text" placeholder="Email*" required="" [(ngModel)]="email">
+        </div>
+        <div  style="display: block;">
+            <textarea style="width: 100%;display: block;align-self: center;" autocomplete="off" class="input input--full input--textarea input--higher-textarea" [(ngModel)]="message" placeholder="Message*" required=""></textarea>
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" [disabled]="!email || !name || !message"
+                    (click)="sendEmail()">Message us!</button>
+    </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

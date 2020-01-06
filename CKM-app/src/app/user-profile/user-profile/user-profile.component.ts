@@ -1,26 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+declare var jQuery: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './user-profile.html',
 
 })
-export class UserProfileComponent {
+export class UserProfileComponent  {
 
   email: string;
   password: string;
-
+  isShow: boolean = true;
+  isShow2: boolean = true;
   name: string;
   models: string;
+  services: string;
   currency: string;
   scheme: string;
   message: string;
+  country: string;
   infantrysmallest: number;
   infantrysmallestassembly: number;
   infantrysmallestlevel: number;
@@ -176,5 +180,27 @@ export class UserProfileComponent {
   signOut() {
     this.authenticationService.SignOut();
   }
+  toggleDisplay(){
+    this.isShow = !this.isShow
+  }
+  toggleDisplay2(){
+    this.isShow2 = !this.isShow2
+  }
+  sendEmail2() {
+    const callable = this.fun.httpsCallable('toEmail');
+    const message = this.message
+    const email = this.email
+    const name = this.name
+    const services = this.services
+    const country = this.country
+    const scheme = this.scheme
 
+    callable({ text: 'clients name: ' + name 
+        + '<br> Clients prefered email: ' + email
+        + '<br> Services requested: ' + services 
+        + '<br> Country located: ' + country
+        + "<br> Models and levels requesting: " + message 
+        + "<br> Color scheme: " + scheme 
+        , subject: 'Quote ask from ' + name}).subscribe();
+  }
 }

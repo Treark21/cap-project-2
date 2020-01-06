@@ -1,3 +1,4 @@
+
 <style>
     @media (max-width: 415px) {
         #header {
@@ -210,7 +211,43 @@
             </p>
             <br>
             <br>
-            <div class="container">
+            <button type="button" (click)=toggleDisplay2() class="btn btn-primary btn-lg btn-block">Normal Quote form</button>
+            <button type="button" (click)=toggleDisplay() class="btn btn-danger btn-lg btn-block">Large Quote form</button>
+            <br>
+            <br>
+            <div class="container" *ngIf=!isShow2>
+                <h1 align="center">Ask for a Quote!</h1>
+                <div class="row">
+                    
+                    <div  style="display: table; width:100%">
+                        <input style="display:table-cell; width:100%" type="text" placeholder="Name*" required="" [(ngModel)]="name">
+                    </div>
+                    <div  style="display: table; width:100%">
+                        <input style="display:table-cell; width:100%" type="text" placeholder="Email*" required="" [(ngModel)]="email">
+                    </div>
+                    <div  style="display: table; width:100%">
+                        <label>Services Desired (i.e. Assembly, painting, basing, etc.) </label>
+                        <textarea style="width: 100%;display: table-cell;" autocomplete="off" class="input input--full input--textarea input--higher-textarea" [(ngModel)]="services" placeholder="Services*" required=""></textarea>
+                    </div>
+                    <div  style="display: table; width:100%">
+                        <input style="display:table-cell; width:100%" type="text" placeholder="Country*" required="" [(ngModel)]="country">
+                    </div>
+                    <div  style="display: table; width:100%">
+                        <label>Please put the models and the levels you want for them here.</label>
+                        <textarea style="width: 100%;display: table-cell;" autocomplete="off" class="input input--full input--textarea input--higher-textarea" [(ngModel)]="message" placeholder="Message*" required=""></textarea>
+                    </div>
+                    <div  style="display: table; width:100%">
+                        <label>Color Scheme (if you have a photo please put a link to it here)</label>
+                        <textarea style="width: 100%;display: table-cell;" autocomplete="off" class="input input--full input--textarea input--higher-textarea" [(ngModel)]="scheme" placeholder="Color scheme*" required=""></textarea>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" [disabled]="!name || !email || !services || !country || !message || !scheme"
+                    (click)="sendEmail2()">Request Quote!</button>
+                </div>
+                
+            </div>
+            <br>
+            <br>
+            <div class="container" *ngIf=!isShow>
 
                 <div class="form-group">
                     <label>Name: </label>
@@ -231,237 +268,287 @@
                 </div>
 
 
-        
-                    <fieldset>
-                        <legend>Quote</legend>
-                       
-                        
-                                <div class="form-group">
-                                    <label>Infantry(smallest):</label>
-                                    <input type="number" class="form-control prc" [(ngModel)]="infantrysmallest"  />
-                                    <label>Assembly</label>
-                                    <input type="checkbox" class="form-control istassmebly" [(ngModel)]="infantrysmallestassembly"
-                                        value="1" />
-                                   
-                                    <label>Level 1</label>
-                                    <input type="radio" name="level"  value="1"
-                                        class="form-control istlvl1" [(ngModel)]="infantrysmallestlevel"/>
-                                    <label>Level 2</label>
-                                    <input type="radio" name="level"  value="2"
-                                        class="form-control istlvl2" [(ngModel)]="infantrysmallestlevel" />
-                                    <label>Level 3</label>
-                                    <input type="radio" name="level"  value="3"
-                                        class="form-control istlvl3" [(ngModel)]="infantrysmallestlevel" />
-                                    
-                                </div>
-                          
-                            <div class="form-group">
-                                <label>Infantry(small):</label>
-                                <input type="number" class="form-control prc" [(ngModel)]="infantrysmall"/>
-                                <label>Assembly</label>
-                                <input type="checkbox" class="form-control isassmebly" [(ngModel)]="infantrysmallassembly" />
-                                <label>Level 1</label>
-                                <input type="radio" name="isname" value="1"class="form-control islvl1" [(ngModel)]="infantrysmalllevel" />
-                                <label>Level 2</label>
-                                <input type="radio" name="isname" value="2"class="form-control islvl2" [(ngModel)]="infantrysmalllevel"/>
-                                <label>Level 3</label>
-                                <input type="radio" name="isname" value="3" class="form-control islvl3" [(ngModel)]="infantrysmalllevel"/>
-                            </div>
-                           
-                            <div class="form-group">
-                                <label>Infantry(medium):</label>
-                                <input type="number" class="form-control prc" [(ngModel)]="infantrymedium"/>
-                                <label>Assembly</label>
-                                <input type="checkbox" class="form-control imassmebly" [(ngModel)]="infantrymediumassembly"/>
-                                <label>Level 1</label>
-                                <input type="radio" name="imname" value="1"class="form-control imlvl1" [(ngModel)]="infantrysmediumevel"/>
-                                <label>Level 2</label>
-                                <input type="radio" name="imname" value="2"class="form-control imlvl2" [(ngModel)]="infantrysmediumevel"/>
-                                <label>Level 3</label>
-                                <input type="radio" name="imname"value="3" class="form-control imlvl3" [(ngModel)]="infantrysmediumevel"/>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Infantry(elite):</label>
-                                <input type="number" class="form-control prc" [(ngModel)]="infantryelite"/>
-                                <label>Assembly</label>
-                                <input type="checkbox" class="form-control ieassmebly" [(ngModel)]="infantryeliteassembly"/>
-                                <label>Level 1</label>
-                                <input type="radio" name="iename"value="1" class="form-control ielvl1" [(ngModel)]="infantryelitelevel"/>
-                                <label>Level 2</label>
-                                <input type="radio" name="iename" value="2"class="form-control ielvl2" [(ngModel)]="infantryelitelevel"/>
-                                <label>Level 3</label>
-                                <input type="radio" name="iename"value="3" class="form-control ielvl3" [(ngModel)]="infantryelitelevel"/>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Infantry(large):</label>
-                                <input type="number" class="form-control prc" [(ngModel)]="infantrylarge"/>
-                                <label>Assembly</label>
-                                <input type="checkbox" class="form-control ilassembly" [(ngModel)]="infantrylargeassembly"/>
-                                <label>Level 1</label>
-                                <input type="radio" name="ilname"value="1" class="form-control illvl1" [(ngModel)]="infantrylargelevel"/>
-                                <label>Level 2</label>
-                                <input type="radio" name="ilname" value="2"class="form-control illvl2"[(ngModel)]="infantrylargelevel" />
-                                <label>Level 3</label>
-                                <input type="radio" name="ilname" value="3"class="form-control illvl3"[(ngModel)]="infantrylargelevel" />
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Infantry(hero):</label>
-                                <input type="number" class="form-control prc" [(ngModel)]="infantryhero"/>
-                                <label>Assembly</label>
-                                <input type="checkbox" class="form-control ihassembly" [(ngModel)]="infantryheroassembly"/>
-                                <label>Level 1</label>
-                                <input type="radio" name="ihname" value="1"class="form-control ihlvl1" [(ngModel)]="infantryherolevel"/>
-                                <label>Level 2</label>
-                                <input type="radio" name="ihname" value="2"class="form-control ihlvl2" [(ngModel)]="infantryherolevel"/>
-                                <label>Level 3</label>
-                                <input type="radio" name="ihname" value="3"class="form-control ihlvl3"[(ngModel)]="infantryherolevel" />
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Infantry(large hero):</label>
-                                <input type="number" class="form-control prc" [(ngModel)]="infantrylargehero"/>
-                                <label>Assembly</label>
-                                <input type="checkbox" class="form-control ilhassembly" [(ngModel)]="infantrylargeheroassembly"/>
-                                <label>Level 1</label>
-                                <input type="radio" name="ilhname" value="1" class="form-control ilhlvl1" [(ngModel)]="infantrylargeherolevel"/>
-                                <label>Level 2</label>
-                                <input type="radio" name="ilhname" value="2" class="form-control ilhlvl2" [(ngModel)]="infantrylargeherolevel"/>
-                                <label>Level 3</label>
-                                <input type="radio" name="ilhname" value="3" class="form-control ilhlvl3" [(ngModel)]="infantrylargeherolevel"/>
-                            </div>
-                        
-                        
-                        <div class="form-group">
-                            <label>Mounted(small):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="mountedsmall"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control msassembly" [(ngModel)]="mountedsmallassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio" name="msname" value="1" class="form-control mslvl1" [(ngModel)]="mountedsmalllevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" name="msname" value="2" class="form-control mslvl2" [(ngModel)]="mountedsmalllevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" name="msname" value="3" class="form-control mslvl3" [(ngModel)]="mountedsmalllevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Mounted(medium):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="mountedmedium"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control mmassembly" [(ngModel)]="mountedmediumassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio"  value="1"name="mmname" class="form-control mmlvl1" [(ngModel)]="mountedmediumlevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" value="2" name="mmname" class="form-control mmlvl2" [(ngModel)]="mountedmediumlevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" value="3" name="mmname" class="form-control mmlvl3" [(ngModel)]="mountedmediumlevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Mounted(large):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="mountedlarge"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control mlassembly" [(ngModel)]="mountedlargeassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio" value="1" name="mlname" class="form-control mllvl1" [(ngModel)]="mountedlargelevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" value="2" name="mlname" class="form-control mllvl2" [(ngModel)]="mountedlargelevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" value="3" name="mlname" class="form-control mllvl3" [(ngModel)]="mountedlargelevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Monster/Vehicle(small):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="vehiclesmall"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control vsassembly" [(ngModel)]="vehiclesmallassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio" value="1" name="vsname" class="form-control vslvl1" [(ngModel)]="vehiclesmalllevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" value="2" name="vsname" class="form-control vslvl2" [(ngModel)]="vehiclesmalllevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" value="3" name="vsname" class="form-control vslvl3" [(ngModel)]="vehiclesmalllevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Monster/Vehicle(medium):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="vehiclemedium"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control vmassembly" [(ngModel)]="vehiclemediumassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio" value="1" name="vmname" class="form-control vmlvl1" [(ngModel)]="vehiclemediumlevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" value="2" name="vmname" class="form-control vmlvl1" [(ngModel)]="vehiclemediumlevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" value="3" name="vmname" class="form-control vmlvl1" [(ngModel)]="vehiclemediumlevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Monster/Vehicle(large):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="vehiclelarge"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control vlassembly" [(ngModel)]="vehiclelargeassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio" value="1" name="vlname" class="form-control vllvl1" [(ngModel)]="vehiclelargelevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" value="2" name="vlname" class="form-control vllvl2" [(ngModel)]="vehiclelargelevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" value="3" name="vlname" class="form-control vllvl3" [(ngModel)]="vehiclelargelevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Monster/Vehicle(largest):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="vehiclelargest"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control vltassembly" [(ngModel)]="vehiclelargestassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio" value="1" name="vltname" class="form-control vltlvl1" [(ngModel)]="vehiclelargestlevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" value="2" name="vltname" class="form-control vltlvl2" [(ngModel)]="vehiclelargestlevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" value="3" name="vltname" class="form-control vltlvl3" [(ngModel)]="vehiclelargestlevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Monster/Vehicle(superheavy):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="vehiclesuperheavy"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control shassembly" [(ngModel)]="vehiclesuperheavyassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio" value="1" name="shname" class="form-control shlvl1" [(ngModel)]="vehiclesuperheavylevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" value="2" name="shname" class="form-control shlvl2" [(ngModel)]="vehiclesuperheavylevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" value="3" name="shname" class="form-control shlvl3" [(ngModel)]="vehiclesuperheavylevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Monster/Vehicle(titan):</label>
-                            <input type="number" class="form-control prc" [(ngModel)]="vehicletitan"/>
-                            <label>Assembly</label>
-                            <input type="checkbox" class="form-control tassembly" [(ngModel)]="vehicletitanassembly"/>
-                            <label>Level 1</label>
-                            <input type="radio" value="1" name="tname" class="form-control tlvl1" [(ngModel)]="vehicletitanlevel"/>
-                            <label>Level 2</label>
-                            <input type="radio" value="2" name="tname" class="form-control tlvl2" [(ngModel)]="vehicletitanlevel"/>
-                            <label>Level 3</label>
-                            <input type="radio" value="3" name="tname" class="form-control tlvl3" [(ngModel)]="vehicletitanlevel"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Color scheme (if wanting to use a picture please put a link to the picture in the box
-                                below):</label>
-                            <input type="text" class="form-control " [(ngModel)]="scheme"/>
-                        </div>
-                        <div class="form group">
-                            <label>Please enter any special requests below: (WARNING: This may not be possible or come with additional charges)</label>
-                            <input type="text" class="form-control " [(ngModel)]="message"/>
-                        </div>
-                        <div class="form group">
-                            <label>Total:</label>
-                            <output id="total"></output>
-                        </div>
-                    </fieldset>
-               
+
+                <fieldset>
+                    <legend>Quote</legend>
+
+
+                    <div class="form-group">
+                        <label>Infantry(smallest):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="infantrysmallest" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control istassmebly" [(ngModel)]="infantrysmallestassembly"
+                            value="1" />
+
+                        <label>Level 1</label>
+                        <input type="radio" name="level" value="1" class="form-control istlvl1"
+                            [(ngModel)]="infantrysmallestlevel" />
+                        <label>Level 2</label>
+                        <input type="radio" name="level" value="2" class="form-control istlvl2"
+                            [(ngModel)]="infantrysmallestlevel" />
+                        <label>Level 3</label>
+                        <input type="radio" name="level" value="3" class="form-control istlvl3"
+                            [(ngModel)]="infantrysmallestlevel" />
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Infantry(small):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="infantrysmall" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control isassmebly" [(ngModel)]="infantrysmallassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" name="isname" value="1" class="form-control islvl1"
+                            [(ngModel)]="infantrysmalllevel" />
+                        <label>Level 2</label>
+                        <input type="radio" name="isname" value="2" class="form-control islvl2"
+                            [(ngModel)]="infantrysmalllevel" />
+                        <label>Level 3</label>
+                        <input type="radio" name="isname" value="3" class="form-control islvl3"
+                            [(ngModel)]="infantrysmalllevel" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Infantry(medium):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="infantrymedium" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control imassmebly" [(ngModel)]="infantrymediumassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" name="imname" value="1" class="form-control imlvl1"
+                            [(ngModel)]="infantrysmediumevel" />
+                        <label>Level 2</label>
+                        <input type="radio" name="imname" value="2" class="form-control imlvl2"
+                            [(ngModel)]="infantrysmediumevel" />
+                        <label>Level 3</label>
+                        <input type="radio" name="imname" value="3" class="form-control imlvl3"
+                            [(ngModel)]="infantrysmediumevel" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Infantry(elite):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="infantryelite" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control ieassmebly" [(ngModel)]="infantryeliteassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" name="iename" value="1" class="form-control ielvl1"
+                            [(ngModel)]="infantryelitelevel" />
+                        <label>Level 2</label>
+                        <input type="radio" name="iename" value="2" class="form-control ielvl2"
+                            [(ngModel)]="infantryelitelevel" />
+                        <label>Level 3</label>
+                        <input type="radio" name="iename" value="3" class="form-control ielvl3"
+                            [(ngModel)]="infantryelitelevel" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Infantry(large):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="infantrylarge" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control ilassembly" [(ngModel)]="infantrylargeassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" name="ilname" value="1" class="form-control illvl1"
+                            [(ngModel)]="infantrylargelevel" />
+                        <label>Level 2</label>
+                        <input type="radio" name="ilname" value="2" class="form-control illvl2"
+                            [(ngModel)]="infantrylargelevel" />
+                        <label>Level 3</label>
+                        <input type="radio" name="ilname" value="3" class="form-control illvl3"
+                            [(ngModel)]="infantrylargelevel" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Infantry(hero):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="infantryhero" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control ihassembly" [(ngModel)]="infantryheroassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" name="ihname" value="1" class="form-control ihlvl1"
+                            [(ngModel)]="infantryherolevel" />
+                        <label>Level 2</label>
+                        <input type="radio" name="ihname" value="2" class="form-control ihlvl2"
+                            [(ngModel)]="infantryherolevel" />
+                        <label>Level 3</label>
+                        <input type="radio" name="ihname" value="3" class="form-control ihlvl3"
+                            [(ngModel)]="infantryherolevel" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Infantry(large hero):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="infantrylargehero" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control ilhassembly"
+                            [(ngModel)]="infantrylargeheroassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" name="ilhname" value="1" class="form-control ilhlvl1"
+                            [(ngModel)]="infantrylargeherolevel" />
+                        <label>Level 2</label>
+                        <input type="radio" name="ilhname" value="2" class="form-control ilhlvl2"
+                            [(ngModel)]="infantrylargeherolevel" />
+                        <label>Level 3</label>
+                        <input type="radio" name="ilhname" value="3" class="form-control ilhlvl3"
+                            [(ngModel)]="infantrylargeherolevel" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Mounted(small):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="mountedsmall" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control msassembly" [(ngModel)]="mountedsmallassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" name="msname" value="1" class="form-control mslvl1"
+                            [(ngModel)]="mountedsmalllevel" />
+                        <label>Level 2</label>
+                        <input type="radio" name="msname" value="2" class="form-control mslvl2"
+                            [(ngModel)]="mountedsmalllevel" />
+                        <label>Level 3</label>
+                        <input type="radio" name="msname" value="3" class="form-control mslvl3"
+                            [(ngModel)]="mountedsmalllevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Mounted(medium):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="mountedmedium" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control mmassembly" [(ngModel)]="mountedmediumassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" value="1" name="mmname" class="form-control mmlvl1"
+                            [(ngModel)]="mountedmediumlevel" />
+                        <label>Level 2</label>
+                        <input type="radio" value="2" name="mmname" class="form-control mmlvl2"
+                            [(ngModel)]="mountedmediumlevel" />
+                        <label>Level 3</label>
+                        <input type="radio" value="3" name="mmname" class="form-control mmlvl3"
+                            [(ngModel)]="mountedmediumlevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Mounted(large):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="mountedlarge" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control mlassembly" [(ngModel)]="mountedlargeassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" value="1" name="mlname" class="form-control mllvl1"
+                            [(ngModel)]="mountedlargelevel" />
+                        <label>Level 2</label>
+                        <input type="radio" value="2" name="mlname" class="form-control mllvl2"
+                            [(ngModel)]="mountedlargelevel" />
+                        <label>Level 3</label>
+                        <input type="radio" value="3" name="mlname" class="form-control mllvl3"
+                            [(ngModel)]="mountedlargelevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Monster/Vehicle(small):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="vehiclesmall" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control vsassembly" [(ngModel)]="vehiclesmallassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" value="1" name="vsname" class="form-control vslvl1"
+                            [(ngModel)]="vehiclesmalllevel" />
+                        <label>Level 2</label>
+                        <input type="radio" value="2" name="vsname" class="form-control vslvl2"
+                            [(ngModel)]="vehiclesmalllevel" />
+                        <label>Level 3</label>
+                        <input type="radio" value="3" name="vsname" class="form-control vslvl3"
+                            [(ngModel)]="vehiclesmalllevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Monster/Vehicle(medium):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="vehiclemedium" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control vmassembly" [(ngModel)]="vehiclemediumassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" value="1" name="vmname" class="form-control vmlvl1"
+                            [(ngModel)]="vehiclemediumlevel" />
+                        <label>Level 2</label>
+                        <input type="radio" value="2" name="vmname" class="form-control vmlvl1"
+                            [(ngModel)]="vehiclemediumlevel" />
+                        <label>Level 3</label>
+                        <input type="radio" value="3" name="vmname" class="form-control vmlvl1"
+                            [(ngModel)]="vehiclemediumlevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Monster/Vehicle(large):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="vehiclelarge" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control vlassembly" [(ngModel)]="vehiclelargeassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" value="1" name="vlname" class="form-control vllvl1"
+                            [(ngModel)]="vehiclelargelevel" />
+                        <label>Level 2</label>
+                        <input type="radio" value="2" name="vlname" class="form-control vllvl2"
+                            [(ngModel)]="vehiclelargelevel" />
+                        <label>Level 3</label>
+                        <input type="radio" value="3" name="vlname" class="form-control vllvl3"
+                            [(ngModel)]="vehiclelargelevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Monster/Vehicle(largest):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="vehiclelargest" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control vltassembly" [(ngModel)]="vehiclelargestassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" value="1" name="vltname" class="form-control vltlvl1"
+                            [(ngModel)]="vehiclelargestlevel" />
+                        <label>Level 2</label>
+                        <input type="radio" value="2" name="vltname" class="form-control vltlvl2"
+                            [(ngModel)]="vehiclelargestlevel" />
+                        <label>Level 3</label>
+                        <input type="radio" value="3" name="vltname" class="form-control vltlvl3"
+                            [(ngModel)]="vehiclelargestlevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Monster/Vehicle(superheavy):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="vehiclesuperheavy" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control shassembly"
+                            [(ngModel)]="vehiclesuperheavyassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" value="1" name="shname" class="form-control shlvl1"
+                            [(ngModel)]="vehiclesuperheavylevel" />
+                        <label>Level 2</label>
+                        <input type="radio" value="2" name="shname" class="form-control shlvl2"
+                            [(ngModel)]="vehiclesuperheavylevel" />
+                        <label>Level 3</label>
+                        <input type="radio" value="3" name="shname" class="form-control shlvl3"
+                            [(ngModel)]="vehiclesuperheavylevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Monster/Vehicle(titan):</label>
+                        <input type="number" class="form-control prc" [(ngModel)]="vehicletitan" />
+                        <label>Assembly</label>
+                        <input type="checkbox" class="form-control tassembly" [(ngModel)]="vehicletitanassembly" />
+                        <label>Level 1</label>
+                        <input type="radio" value="1" name="tname" class="form-control tlvl1"
+                            [(ngModel)]="vehicletitanlevel" />
+                        <label>Level 2</label>
+                        <input type="radio" value="2" name="tname" class="form-control tlvl2"
+                            [(ngModel)]="vehicletitanlevel" />
+                        <label>Level 3</label>
+                        <input type="radio" value="3" name="tname" class="form-control tlvl3"
+                            [(ngModel)]="vehicletitanlevel" />
+                    </div>
+                    <div class="form-group">
+                        <label>Color scheme (if wanting to use a picture please put a link to the picture in the box
+                            below):</label>
+                        <input type="text" class="form-control " [(ngModel)]="scheme" />
+                    </div>
+                    <div class="form group">
+                        <label>Please enter any special requests below: (WARNING: This may not be possible or come with
+                            additional charges)</label>
+                        <input type="text" class="form-control " [(ngModel)]="message" />
+                    </div>
+                    <div class="form group">
+                        <label>Total:</label>
+                        <output id="total"></output>
+                    </div>
+                </fieldset>
+                <br>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                    (click)="sendEmail()">Send Request</button>
+
+
             </div>
-            <br>
-            <br>
-            <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-                (click)="sendEmail()">Send Request</button>
+
 
 
         </div>
