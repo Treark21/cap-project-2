@@ -22,7 +22,7 @@ export class AuthenticationService {
         console.log('Successfully signed up!', res);
       })
       .catch(error => {
-        console.log('Something is wrong:', error.message);
+        alert(error.message);
       });    
   }
 
@@ -35,7 +35,7 @@ export class AuthenticationService {
         console.log('Successfully signed in!');
       })
       .catch(err => {
-        console.log('Something is wrong:',err.message);
+        alert(err.message);
       });
   }
 
@@ -45,5 +45,4 @@ export class AuthenticationService {
       .auth
       .signOut();
   }  
-
 }
