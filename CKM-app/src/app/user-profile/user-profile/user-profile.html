@@ -6,7 +6,16 @@
         }
 
     }
-
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    input{
+        border-radius: 5px;
+    }
+    textarea{
+        border-radius: 5px;
+    }
     :root {
         --input-padding-x: 1.5rem;
         --input-padding-y: 0.75rem;
@@ -222,6 +231,7 @@
                     <div  style="display: table; width:100%">
                         <input style="display:table-cell; width:100%" type="text" placeholder="Name*" required="" [(ngModel)]="name">
                     </div>
+                    
                     <div  style="display: table; width:100%">
                         <input style="display:table-cell; width:100%" type="text" placeholder="Email*" required="" [(ngModel)]="email">
                     </div>
