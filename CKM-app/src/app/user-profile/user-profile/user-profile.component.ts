@@ -21,6 +21,8 @@ export class UserProfileComponent  {
   name: string;
   models: string;
   services: string;
+  assembly: boolean = false;
+  basing: boolean = false;
   currency: string;
   scheme: string;
   message: string;
@@ -191,13 +193,16 @@ export class UserProfileComponent  {
     const message = this.message
     const email = this.email
     const name = this.name
-    const services = this.services
+    
     const country = this.country
     const scheme = this.scheme
+    const basing = this.basing
+    const assembly = this.assembly
 
     callable({ text: 'clients name: ' + name 
         + '<br> Clients prefered email: ' + email
-        + '<br> Services requested: ' + services 
+        + '<br> Assembly requested: ' + assembly
+        + '<br> Basing requested: ' + basing
         + '<br> Country located: ' + country
         + "<br> Models and levels requesting: " + message 
         + "<br> Color scheme: " + scheme 

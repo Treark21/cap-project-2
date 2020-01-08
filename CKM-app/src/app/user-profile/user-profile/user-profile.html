@@ -27,7 +27,7 @@
     }
 
     .bg-image {
-        background-image: url('https://thenypost.files.wordpress.com/2019/11/191129-baby-yoda-toys-christmas.jpg?quality=80&strip=all');
+        background-image: url("/assets/images/Cobalt_Keep_Fit.jpg");
         background-size: cover;
         background-position: center;
     }
@@ -136,7 +136,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#708090;">
     <a class="navbar-brand" style="color: #0047AB;" routerLink="/" routerLinkActive="active">
-        <img src="https://image.freepik.com/free-vector/businessman-shouting-through-megaphone_23-2147511376.jpg"
+        <img src="/assets/images/Cobalt_Keep_Flag_Small.jpg"
             width="30" height="30" class="d-inline-block align-top" alt="">
         Cobalt Keep Miniatures
     </a>
@@ -197,8 +197,7 @@
 
 
 <div *ngIf="authenticationService.userData | async">
-    <div id='header' class="jumbotron jumbotron-fluid"
-        style="background-image: url(https://i.pinimg.com/236x/4a/97/47/4a974709011f2b78c228ddcfc6dba7a2--black-templars-space-marine.jpg); background-size: 100%;">
+    <div id= "header"class="jumbotron"style="width: 100%;text-align: center; background-size: 100%; background-image: url(/assets/images/banner.jpg);">
         <h1 class="display-4" style="text-align: center;"><strong>
                 User Profile
             </strong></h1>
@@ -208,10 +207,10 @@
     </div>
     <div class="container">
 
-        <h1 align="center">Hello {{ (authenticationService.userData | async)?.email }}</h1>
+        <h1 align="center"style="color:white;">Hello {{ (authenticationService.userData | async)?.email }}</h1>
         <div class="row">
 
-            <p style="text-align: center;">Please fill out the form below to have that sent to our team to review your
+            <p style="text-align: center;color: darkblue;">Please fill out the form below to have that sent to our team to review your
                 job request! <br>
                 <br>
                 Please remember that if your job is accepted our team will send you an invoice for the full job and a
@@ -236,8 +235,14 @@
                         <input style="display:table-cell; width:100%" type="text" placeholder="Email*" required="" [(ngModel)]="email">
                     </div>
                     <div  style="display: table; width:100%">
-                        <label>Services Desired (i.e. Assembly, painting, basing, etc.) </label>
-                        <textarea style="width: 100%;display: table-cell;" autocomplete="off" class="input input--full input--textarea input--higher-textarea" [(ngModel)]="services" placeholder="Services*" required=""></textarea>
+                        <label>Services Desired:</label>
+                        <div>
+                            <label style="padding-right: 20px;">Assembly: </label>
+                            <input  style="padding-right: 20px;"type="checkbox" [value]=true [(ngModel)]="assembly">
+                        
+                            <label style="padding-right: 20px;padding-left: 20px;" >Basing: </label>
+                            <input style="padding-right: 20px;" type="checkbox" [value]=true [(ngModel)]="basing">
+                        </div>
                     </div>
                     <div  style="display: table; width:100%">
                         <input style="display:table-cell; width:100%" type="text" placeholder="Country*" required="" [(ngModel)]="country">
@@ -578,7 +583,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-9 col-lg-8 mx-auto">
-                                <h3 class="login-heading mb-4">Welcome back!</h3>
+                                <h3 class="login-heading mb-4" style="color: white;">Welcome back!</h3>
 
                                 <div class="form-label-group">
                                     <input id="inputEmail" class="form-control" required type="text" [(ngModel)]="email"
