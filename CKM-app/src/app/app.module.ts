@@ -15,6 +15,7 @@ import { AboutUsModule } from './about-us/about-us.module';
 import { ContactModule } from './contact/contact.module';
 import { UserProfileModule } from './user-profile/user-profile.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LightboxModule } from 'ngx-lightbox';
 
 
 
@@ -35,7 +36,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutUsModule,
     ContactModule,
     UserProfileModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LightboxModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

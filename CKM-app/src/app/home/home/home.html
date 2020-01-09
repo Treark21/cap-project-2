@@ -7,12 +7,33 @@
   
     <title>Cobalt Keep Miniatures</title>
     <style>
-        @media (max-width: 415px) {
+        @media screen and (max-width: 450px) {
             #header {
                 padding-top: 100px;
-                background-size: 200%;
+                background-image: url(/assets/images/banner2.jpg);
+                background-size: 100%;
+                background-repeat: repeat;
             }
 
+        }
+        @media screen and (min-width: 450px) and (max-width: 630px){
+            #header{
+                background-image: url(/assets/images/banner2.jpg);
+            }
+            
+        }
+        @media screen and (min-width: 630px) and (max-width: 980px){
+            #header {
+                background-image: url(/assets/images/banner1.jpg);
+                background-size: 100%;
+            }
+        }
+        @media screen and (min-width: 980px){ 
+            #header {
+                background-image: url(/assets/images/banner.jpg);
+                background-size: 100%;
+            }
+            
         }
         .center {
             display: block;
@@ -84,10 +105,10 @@
   </nav>
   <!-- Header -->
   
-  <div id= "header"class="jumbotron"style="width: 100%;text-align: center; background-size: 100%; background-image: url(/assets/images/banner.jpg);">
+  <div id= "header"class="jumbotron"style=" width: 100%;text-align: center;background-size: 100%;">
     <div class="container" >
-      <h1 class="display-4" style="text-align: center;" ><strong>Cobalt Keep Miniature</strong></h1>
-    <p class="lead" style="text-align: center;">We do the things to paint the stuff!</p>
+      <h1 class="display-4" style="text-align: center; color: maroon;" ><strong>Cobalt Keep Miniature</strong></h1>
+    <p class="lead" style="text-align: center;color: maroon;"><strong>We do the things to paint the stuff!</strong></p>
   
       
     </div>
@@ -99,8 +120,8 @@
   <div class="container">
     <div class="row">
         <div class="col-md-6 ">
-            <h3><strong>Filler column about painting things</strong></h3>
-            <p style="text-align: center;">
+            <h3 style="color: white;"><strong>Filler column about painting things</strong></h3>
+            <p style="text-align: center; color: darkblue;">
                 Neato things about neato stuffs, who knew that he would talk so much about all these things and
                 stuffs
             </p>
@@ -154,15 +175,15 @@
   <div class="container">
     <div class="row">
         <div class="col-md-6" style="text-align: center;">
-            <h3><strong>Community & links</strong></h3>
-            <span>Find us on <a style="color:rgb(111, 0, 255)"
+            <h3 style="color: white;"><strong>Community & links</strong></h3>
+            <span style="color: darkblue;">Find us on <a style="color:white"
                 href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> as well as on <a
                     style="color:orange" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> to see
                 our previous works as well as links to the communities we are apart of.</span>
         </div>
         <div class="d-flex col-md-6">
             <img
-                src="https://i.pinimg.com/236x/4a/97/47/4a974709011f2b78c228ddcfc6dba7a2--black-templars-space-marine.jpg" class="center" />
+                src="/assets/images/IMG_0711.JPG" class="center" />
         </div>
     </div>
   </div>

@@ -3,6 +3,7 @@ import { FormsModule }    from '@angular/forms';
 import { CommonModule }   from '@angular/common';
 
 import { GalleryComponent }     from './gallery/gallery.component';
+import { LightboxModule } from 'ngx-lightbox';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 
@@ -10,6 +11,7 @@ import { GalleryRoutingModule } from './gallery-routing.module';
   imports: [
     CommonModule,
     FormsModule,
+    LightboxModule,
     GalleryRoutingModule
   ],
   declarations: [
