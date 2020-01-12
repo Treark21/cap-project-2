@@ -1,27 +1,26 @@
-# CKMApp
+# cap-project-2
+ 2nd idea for project and building
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
-## Development server
+Overview:
+I want to make an E-commerce site that will provide commission painters to show their works, have a gallery of items that show the differnet levels in painting for people to select from, and then to have a submission form to contact the painter with what they would like to have done and at what level for a quote. The idea came from knowing a few commission painters and knowing their need for a website beyond just a facebook page
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Features:
 
-## Code scaffolding
+    User login: Users will be able to create accounts and log in to the application. User login will change site layout and allow for use of the quote form
+    Multiple pages: gallery of works as well as a gallery of commission types and possible pricing
+    Contact forms: On seperate pages we have differnet contact forms, both send an email through Twilio SendGrid to Owner email 
+    
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Technologies:
 
-## Build
+    HTML & CSS
+    JavaScrip
+    Firebase
+    Bootstrap 4
+    Angular
+    SendGrid
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ I will need to learn how to add a user database that can be referenced by the login form and validated,how to add different types of users, how to redirect the user profile page based on the type of user, use of Angular to add an enhanced framework, as well as work mutiple pages. I will also need to learn how to add communication to the painter
+ 
+Project Tracker: https://trello.com/b/BL0lyQYn
