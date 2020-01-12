@@ -19,9 +19,14 @@ import { LightboxModule } from 'ngx-lightbox';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    
+    
+    
   ],
   imports: [
     BrowserModule,

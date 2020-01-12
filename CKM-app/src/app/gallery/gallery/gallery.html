@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  
+
     <title>Cobalt Keep Miniatures</title>
     <style>
         @media screen and (max-width: 450px) {
@@ -16,25 +16,29 @@
             }
 
         }
-        @media screen and (min-width: 450px) and (max-width: 630px){
-            #header{
+
+        @media screen and (min-width: 450px) and (max-width: 630px) {
+            #header {
                 background-image: url(/assets/images/banner2.jpg);
             }
-            
+
         }
-        @media screen and (min-width: 630px) and (max-width: 980px){
+
+        @media screen and (min-width: 630px) and (max-width: 980px) {
             #header {
                 background-image: url(/assets/images/banner1.jpg);
                 background-size: 100%;
             }
         }
-        @media screen and (min-width: 980px){ 
+
+        @media screen and (min-width: 980px) {
             #header {
                 background-image: url(/assets/images/banner.jpg);
                 background-size: 100%;
             }
-            
+
         }
+
         .center {
             display: block;
             margin-left: auto;
@@ -44,13 +48,13 @@
         }
     </style>
 </head>
-  
-  
-  <!-- Toolbar -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#708090;">
+
+
+<!-- Toolbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#708090;">
     <a class="navbar-brand" style="color: #0047AB;" routerLink="/" routerLinkActive="active">
-        <img src="/assets/images/Cobalt_Keep_Flag_Small.jpg"
-            width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="/assets/images/Cobalt_Keep_Flag_Small.jpg" width="30" height="30" class="d-inline-block align-top"
+            alt="">
         Cobalt Keep Miniatures
     </a>
     <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
@@ -60,26 +64,26 @@
     <div id="my-nav" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link " style="color: #0047AB;"  routerLink="/" routerLinkActive="active" tabindex="-1"
-                aria-disabled="true">Home</a>
+                <a class="nav-link " style="color: #0047AB;" routerLink="/" routerLinkActive="active" tabindex="-1"
+                    aria-disabled="true">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " style="color: whitesmoke;" routerLink="/gallery" routerLinkActive="active" tabindex="-1"
-                    aria-disabled="true">Gallery</a>
+                <a class="nav-link " style="color: whitesmoke;" routerLink="/gallery" routerLinkActive="active"
+                    tabindex="-1" aria-disabled="true">Gallery</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " style="color: #0047AB;" routerLink="/services" routerLinkActive="active" tabindex="-1"
-                    aria-disabled="true">Services</a>
+                <a class="nav-link " style="color: #0047AB;" routerLink="/services" routerLinkActive="active"
+                    tabindex="-1" aria-disabled="true">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " style="color: #0047AB;" routerLink="/about-us" routerLinkActive="active" tabindex="-1"
-                    aria-disabled="true">About Us</a>
+                <a class="nav-link " style="color: #0047AB;" routerLink="/about-us" routerLinkActive="active"
+                    tabindex="-1" aria-disabled="true">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " style="color: #0047AB;" routerLink="/contact" routerLinkActive="active" tabindex="-1"
-                    aria-disabled="true">Contact</a>
+                <a class="nav-link " style="color: #0047AB;" routerLink="/contact" routerLinkActive="active"
+                    tabindex="-1" aria-disabled="true">Contact</a>
             </li>
-  
+
         </ul>
     </div>
     <div class="collapse navbar-collapse navbars align-right" id="my-nav" *ngIf="!(authenticationService.userData | async)"> 
@@ -104,84 +108,89 @@
         </ul>
     </div>
   </nav>
-  <div id= "header"class="jumbotron"
-  style="width: 100%;text-align: center; background-size: 100%; background-image: url(/assets/images/banner.jpg);">
+<div id="header" class="jumbotron"
+    style="width: 100%;text-align: center; background-size: 100%; background-image: url(/assets/images/banner.jpg);">
     <h1 class="display-4" style="text-align: center; color: maroon;"><strong>
-                Gallery
-            </strong></h1>
-        <p class="lead" style="text-align: center; color: maroon;"><strong>
-                Look at all this stuff we painted!
-            </strong></p>
-    </div>
-    <div class="space">
+            Gallery
+        </strong></h1>
+    <p class="lead" style="text-align: center; color: maroon;"><strong>
+            Look at all this stuff we painted!
+        </strong></p>
+</div>
+<div class="space">
 
-    </div>
-    <!-- Body of page, having a bar that one can select to have the tags of the images to only show that type
+</div>
+<!-- Body of page, having a bar that one can select to have the tags of the images to only show that type
         with the 4 levels of paining and game being the tag, each image will have 2 tags, user can view the entire
         page or modify using top bar to only see a selection  -->
-    
-    <ul>
-        <div class="container">
-            <div class="row" style="align-items: center; color:white;">
-                <a class="filter btn col-xs-2" id="all" dataFilter="all" >Show All</a>
 
-                <a class="filter btn col-xs-2" id="level-1" dataFilter="level-1">Level 1</a>
-
-                <a class="filter btn col-xs-2" id="level-2" dataFilter="level-2">Level 2</a>
-
-                <a class="filter btn col-xs-2" id="level-3" dataFilter="level-3">Level 3</a>
-
-                <a class="filter btn col-xs-2" id="40k" dataFilter="40k">Warhammer 40k</a>
-
-                <a class="filter btn col-xs-2" id="aos" dataFilter="aos">Age of Sigmar</a>
-
-            </div>
-        </div>
-    </ul>
-
+<ul>
     <div class="container">
-        <div id="gallery" class="row">
-            <img class="col-md-3 level-3 aos" src="../../../assets/images/IMG_0660.JPG" alt="">
-            <img class="col-md-3   level-3 aos"
-                src="../../../assets/images/IMG_0661.JPG"
-                alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0662.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0664.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0665.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0667.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0668.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0672.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0675.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0676.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0677.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0678.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0679.JPG" alt="">
-            <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0681.JPG" alt="">
+        <div class="row" style="align-items: center; color:white;">
+            <a class="filter btn col-xs-2" id="all" dataFilter="all">Show All</a>
 
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0682.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0683.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0684.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0685.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0686.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0687.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0692.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0694.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0695.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0696.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0698.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0699.JPG" alt="">
-            <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0702.JPG" alt="">
+            <a class="filter btn col-xs-2" id="level-1" dataFilter="level-1">Level 1</a>
 
-            <img class="col-md-3   level-1 aos" src="../../../assets/images/IMG_0708.JPG" alt="">
-            <img class="col-md-3   level-1 aos" src="../../../assets/images/IMG_0709.JPG" alt="">
-            <img class="col-md-3   level-1 aos" src="../../../assets/images/IMG_0710.JPG" alt="">
-            <img class="col-md-3   level-1 aos" src="../../../assets/images/IMG_0711.JPG" alt="">
+            <a class="filter btn col-xs-2" id="level-2" dataFilter="level-2">Level 2</a>
 
+            <a class="filter btn col-xs-2" id="level-3" dataFilter="level-3">Level 3</a>
 
-            
+            <a class="filter btn col-xs-2" id="40k" dataFilter="40k">Warhammer 40k</a>
+
+            <a class="filter btn col-xs-2"id="aos" dataFilter="aos">Age of Sigmar</a>
+
         </div>
- 
- <router-outlet></router-outlet>
+    </div>
+</ul>
+
+ <div class="container">
+    <div id="gallery" class="row">
+        <img class="col-md-3 level-3 aos" src="../../../assets/images/IMG_0660.JPG" (click)="open(0)"
+             />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0661.JPG" (click)="open(1)"
+            />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0662.JPG" (click)="open(2)"
+             />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0664.JPG" (click)="open(3)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0665.JPG" (click)="open(4)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0667.JPG" (click)="open(5)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0668.JPG" (click)="open(6)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0672.JPG" (click)="open(7)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0675.JPG" (click)="open(8)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0676.JPG" (click)="open(9)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0677.JPG" (click)="open(10)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0678.JPG" (click)="open(11)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0679.JPG" (click)="open(12)" />
+        <img class="col-md-3   level-3 aos" src="../../../assets/images/IMG_0681.JPG" (click)="open(13)" />
+
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0682.JPG" (click)="open(14)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0683.JPG" (click)="open(15)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0684.JPG" (click)="open(16)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0685.JPG" (click)="open(17)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0686.JPG" (click)="open(18)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0687.JPG" (click)="open(19)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0692.JPG" (click)="open(20)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0694.JPG" (click)="open(21)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0695.JPG" (click)="open(22)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0696.JPG" (click)="open(23)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0698.JPG" (click)="open(24)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0699.JPG" (click)="open(25)" />
+        <img class="col-md-3   level-2 40k" src="../../../assets/images/IMG_0702.JPG" (click)="open(26)" />
+
+        <img class="col-md-3   level-1 aos" src="../../../assets/images/IMG_0708.JPG" (click)="open(27)" />
+        <img class="col-md-3   level-1 aos" src="../../../assets/images/IMG_0709.JPG" (click)="open(28)" />
+        <img class="col-md-3   level-1 aos" src="../../../assets/images/IMG_0710.JPG" (click)="open(29)" />
+        <img class="col-md-3   level-1 aos" src="../../../assets/images/IMG_0711.JPG" (click)="open(30)" /> 
+
+
+
+    </div>  
+   
+</div>
+
+
+
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>

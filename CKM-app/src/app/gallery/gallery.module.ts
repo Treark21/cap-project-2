@@ -7,15 +7,20 @@ import { LightboxModule } from 'ngx-lightbox';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     LightboxModule,
-    GalleryRoutingModule
+   
+    GalleryRoutingModule,
+    
   ],
   declarations: [
     GalleryComponent,
+    
     
   ]
 })
