@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +19,7 @@ import { ContactModule } from './contact/contact.module';
 import { UserProfileModule } from './user-profile/user-profile.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LightboxModule } from 'ngx-lightbox';
+import { DropZoneDirective } from './drop-zone.directive';
 
 
 
@@ -24,6 +28,7 @@ import { LightboxModule } from 'ngx-lightbox';
 @NgModule({
   declarations: [
     AppComponent,
+    DropZoneDirective,
     
     
     
@@ -42,6 +47,8 @@ import { LightboxModule } from 'ngx-lightbox';
     ContactModule,
     UserProfileModule,
     ReactiveFormsModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     LightboxModule
   ],
   providers: [AuthenticationService],

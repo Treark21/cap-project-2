@@ -1,43 +1,49 @@
-
 <style>
     @media screen and (max-width: 450px) {
-            #header {
-                padding-top: 100px;
-                background-image: url(/assets/images/banner2.jpg);
-                background-size: 100%;
-                background-repeat: repeat;
-            }
+        #header {
+            padding-top: 100px;
+            background-image: url(/assets/images/banner2.jpg);
+            background-size: 100%;
+            background-repeat: repeat;
+        }
 
+    }
+
+    @media screen and (min-width: 450px) and (max-width: 630px) {
+        #header {
+            background-image: url(/assets/images/banner2.jpg);
         }
-        @media screen and (min-width: 450px) and (max-width: 630px){
-            #header{
-                background-image: url(/assets/images/banner2.jpg);
-            }
-            
+
+    }
+
+    @media screen and (min-width: 630px) and (max-width: 980px) {
+        #header {
+            background-image: url(/assets/images/banner1.jpg);
+            background-size: 100%;
         }
-        @media screen and (min-width: 630px) and (max-width: 980px){
-            #header {
-                background-image: url(/assets/images/banner1.jpg);
-                background-size: 100%;
-            }
+    }
+
+    @media screen and (min-width: 980px) {
+        #header {
+            background-image: url(/assets/images/banner.jpg);
+            background-size: 100%;
         }
-        @media screen and (min-width: 980px){ 
-            #header {
-                background-image: url(/assets/images/banner.jpg);
-                background-size: 100%;
-            }
-            
-        }
+
+    }
+
     div {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    input{
+
+    input {
         border-radius: 5px;
     }
-    textarea{
+
+    textarea {
         border-radius: 5px;
     }
+
     :root {
         --input-padding-x: 1.5rem;
         --input-padding-y: 0.75rem;
@@ -50,11 +56,11 @@
 
     .bg-image {
         background-image: url("/assets/images/Cobalt_Keep_Fit.jpg");
-        background-origin:padding-box;
+        background-origin: padding-box;
         background-position: bottom;
         background-repeat: no-repeat;
         background-size: 75%;
-        
+
     }
 
     .login-heading {
@@ -161,8 +167,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#708090;">
     <a class="navbar-brand" style="color: #0047AB;" routerLink="/" routerLinkActive="active">
-        <img src="/assets/images/Cobalt_Keep_Flag_Small.jpg"
-            width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="/assets/images/Cobalt_Keep_Flag_Small.jpg" width="30" height="30" class="d-inline-block align-top"
+            alt="">
         Cobalt Keep Miniatures
     </a>
     <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
@@ -222,7 +228,8 @@
 
 
 <div *ngIf="authenticationService.userData | async">
-    <div id= "header"class="jumbotron"style="width: 100%;text-align: center; background-size: 100%; background-image: url(/assets/images/banner.jpg);">
+    <div id="header" class="jumbotron"
+        style="width: 100%;text-align: center; background-size: 100%; background-image: url(/assets/images/banner.jpg);">
         <h1 class="display-4" style="text-align: center; color: maroon;"><strong>
                 User Profile
             </strong></h1>
@@ -232,10 +239,11 @@
     </div>
     <div class="container">
 
-        <h1 align="center"style="color:white;">Hello {{ (authenticationService.userData | async)?.email }}</h1>
+        <h1 align="center" style="color:white;">Hello {{ (authenticationService.userData | async)?.email }}</h1>
         <div class="row">
 
-            <p style="text-align: center;color: darkblue;">Please fill out the form below to have that sent to our team to review your
+            <p style="text-align: center;color: darkblue;">Please fill out the form below to have that sent to our team
+                to review your
                 job request! <br>
                 <br>
                 Please remember that if your job is accepted our team will send you an invoice for the full job and a
@@ -244,46 +252,95 @@
             </p>
             <br>
             <br>
-            <button type="button" (click)=toggleDisplay2() class="btn btn-primary btn-lg btn-block">Normal Quote form</button>
-            <button type="button" (click)=toggleDisplay() class="btn btn-danger btn-lg btn-block">Large Quote form</button>
+            <button type="button" (click)=toggleDisplay2() class="btn btn-primary btn-lg btn-block">Normal Quote
+                form</button>
+            <button type="button" (click)=toggleDisplay() class="btn btn-danger btn-lg btn-block">Large Quote
+                form</button>
             <br>
             <br>
             <div class="container" *ngIf=!isShow2>
                 <h1 align="center">Ask for a Quote!</h1>
                 <div class="row">
-                    
-                    <div  style="display: table; width:100%">
-                        <input style="display:table-cell; width:100%" type="text" placeholder="Name*" required="" [(ngModel)]="name">
+
+                    <div style="display: table; width:100%">
+                        <input style="display:table-cell; width:100%" type="text" placeholder="Name*" required=""
+                            [(ngModel)]="name">
                     </div>
-                    
-                    <div  style="display: table; width:100%">
-                        <input style="display:table-cell; width:100%" type="text" placeholder="Email*" required="" [(ngModel)]="email">
+
+                    <div style="display: table; width:100%">
+                        <input style="display:table-cell; width:100%" type="text" placeholder="Email*" required=""
+                            [(ngModel)]="email">
                     </div>
-                    <div  style="display: table; width:100%">
+                    <div style="display: table; width:100%">
                         <label>Services Desired:</label>
                         <div>
                             <label style="padding-right: 20px;">Assembly: </label>
-                            <input  style="padding-right: 20px;"type="checkbox" [value]=true [(ngModel)]="assembly">
-                        
-                            <label style="padding-right: 20px;padding-left: 20px;" >Basing: </label>
+                            <input style="padding-right: 20px;" type="checkbox" [value]=true [(ngModel)]="assembly">
+
+                            <label style="padding-right: 20px;padding-left: 20px;">Basing: </label>
                             <input style="padding-right: 20px;" type="checkbox" [value]=true [(ngModel)]="basing">
                         </div>
                     </div>
-                    <div  style="display: table; width:100%">
-                        <input style="display:table-cell; width:100%" type="text" placeholder="Country*" required="" [(ngModel)]="country">
+                    <div style="display: table; width:100%">
+                        <input style="display:table-cell; width:100%" type="text" placeholder="Country*" required=""
+                            [(ngModel)]="country">
                     </div>
-                    <div  style="display: table; width:100%">
+                    <div style="display: table; width:100%">
                         <label>Please put the models and the levels you want for them here.</label>
-                        <textarea style="width: 100%;display: table-cell;" autocomplete="off" class="input input--full input--textarea input--higher-textarea" [(ngModel)]="message" placeholder="Message*" required=""></textarea>
+                        <textarea style="width: 100%;display: table-cell;" autocomplete="off"
+                            class="input input--full input--textarea input--higher-textarea" [(ngModel)]="message"
+                            placeholder="Message*" required=""></textarea>
                     </div>
-                    <div  style="display: table; width:100%">
-                        <label>Color Scheme (if you have a photo please put a link to it here)</label>
-                        <textarea style="width: 100%;display: table-cell;" autocomplete="off" class="input input--full input--textarea input--higher-textarea" [(ngModel)]="scheme" placeholder="Color scheme*" required=""></textarea>
+                    <div style="display: table; width:100%">
+                        <label>Color Scheme</label>
+                        <textarea style="width: 100%;display: table-cell;" autocomplete="off"
+                            class="input input--full input--textarea input--higher-textarea" [(ngModel)]="scheme"
+                            placeholder="Color scheme*" required=""></textarea>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" [disabled]="!name || !email || !services || !country || !message || !scheme"
-                    (click)="sendEmail2()">Request Quote!</button>
+                    <div class="dropzone" dropZone (hovered)="toggleHover($event)" (dropped)="startUpload($event)"
+                            [class.hovering]="isHovering">
+
+
+
+                            <h3>Upload your army color scheme phot here!</h3>
+
+                            <div class="file">
+                                <label class="file-label">
+
+
+                                    <input class="file-input" type="file" (change)="startUpload($event.target.files)">
+
+
+                                    <span class="file-cta">
+                                        <span class="file-icon">
+                                            <i class="fa fa-upload"></i>
+                                        </span>
+                                        <div *ngIf="percentage | async as pct">
+
+                                            <progress class="progress is-info" 
+                                                      [value]="pct" 
+                                                      max="100">        
+                                            </progress>
+                                          
+                                            {{ pct | number }}%
+                                          
+                                          </div>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    
+                          
+
+
+    
+  
+
+                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                        [disabled]="!name || !email || !country || !message || !scheme"
+                        (click)="sendEmail2()"(click)='thankYou()'>Request Quote!</button>
                 </div>
-                
+
             </div>
             <br>
             <br>
@@ -623,7 +680,7 @@
 
                                 <button
                                     class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-                                    type="submit" (click)="signIn()">Sign in</button>
+                                    type="submit" (click)="signIn()" (click)="welcomeEmail()">Sign in</button>
                                 <button
                                     class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                                     type="submit" (click)="signUp()">Register</button>

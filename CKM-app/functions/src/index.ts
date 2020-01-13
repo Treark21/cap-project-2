@@ -11,6 +11,7 @@ const API_KEY = functions.config().sendgrid.key;
 const TEMPLATE_ID = functions.config().sendgrid.template;
 sgMail.setApiKey(API_KEY);
 
+
 export const welcomeEmail = functions.auth.user().onCreate(user => {
 
     const msg = {
@@ -20,8 +21,9 @@ export const welcomeEmail = functions.auth.user().onCreate(user => {
         dynamic_template_data: {
             subject: 'Welcome to Cobalt Keep Miniatures!',
             name: user.displayName,
-            message: user.displayName + '<br>' +"Thank you for joining our community, to get started on your next dream army please visit our user profile page when signed in to start the process!" + "<br>" +"Thank you from all of us here!"+"<br>"+"The Cobalt Keep Miniatures team."
+            message: user.email + '<br>' +"Thank you for joining our community, to get started on your next dream army please visit our user profile page when signed in to start the process!" + "<br>" +"<br> Thank you from all of us here!"+"<br>"+"The Cobalt Keep Miniatures team."
         },
+        
     };
 
     return sgMail.send(msg);
@@ -41,7 +43,17 @@ export const genericEmail = functions.https.onCall(async (data, context) => {
             subject: data.subject,
             name: data.name,
             message: data.text,
+            attachments: [
+                {
+                  content: data.attachments,
+                  filename: `color scheme`,
+                  type: 'image/.*',
+                  disposition: 'attachment',
+                  contentId: 'colorScheme'
+                },
+              ],
         },
+       
     };
 
     await sgMail.send(msg);
