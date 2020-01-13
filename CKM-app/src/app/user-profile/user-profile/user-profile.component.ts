@@ -155,6 +155,13 @@ export class UserProfileComponent  {
     this.password = '';
 
   }
+  resetPassword() {
+    this.authenticationService.resetPassword(this.email);
+    this.email = '';
+    
+}
+
+  
   loginWithGoogle() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }

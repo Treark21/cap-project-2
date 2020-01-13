@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Observable } from 'rxjs';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,19 @@ export class AuthenticationService {
         alert(err.message);
       });
   }
+  /* Reset Password*/
+  resetPassword(email: string) {
+    
 
+    this.angularFireAuth.auth.sendPasswordResetEmail(email).
+    then(res => {
+      console.log('Email sent!');
+    })
+    .catch(error => {
+      alert(error.message);
+    });
+    
+}
   /* Sign out */
   SignOut() {
     this.angularFireAuth
