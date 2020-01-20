@@ -23,7 +23,7 @@ export class AuthenticationService {
         console.log('Successfully signed up!', res);
       })
       .catch(error => {
-        alert(error.message);
+        alert("Please check the Email and Password fields.");
       });    
   }
 
@@ -36,7 +36,7 @@ export class AuthenticationService {
         console.log('Successfully signed in!');
       })
       .catch(err => {
-        alert(err.message);
+        alert("Email or Password are incorrect. Please try again or use the Forgot Password button.");
       });
   }
   /* Reset Password*/
@@ -48,7 +48,7 @@ export class AuthenticationService {
       console.log('Email sent!');
     })
     .catch(error => {
-      alert(error.message);
+      alert("Please enter in a valid Email address.");
     });
     
 }

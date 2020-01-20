@@ -33,7 +33,7 @@ message: string;
     this.authenticationService.SignOut();
   }
   sendEmail(){
-    const callable = this.fun.httpsCallable('toEmail');
+    const callable = this.fun.httpsCallable('genericEmail');
     const message = this.message
     const email = this.email
     const name = this.name

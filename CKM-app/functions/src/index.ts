@@ -31,12 +31,8 @@ export const welcomeEmail = functions.auth.user().onCreate(user => {
 });
 export const genericEmail = functions.https.onCall(async (data, context) => {
 
-    if (!context.auth || !context.auth.token.email) {
-        throw new functions.https.HttpsError('failed-precondition', 'Must be logged with an email address');
-    }
-    
     const msg = {
-        to: context.auth.token.email,
+        to: 'cobaltkeepminis@gmail.com',
         from: 'cobaltkeepminis@gmail.com',
         templateId: TEMPLATE_ID,
         dynamic_template_data: {

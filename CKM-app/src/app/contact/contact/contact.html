@@ -44,7 +44,7 @@
             }
             
         }
-        div {
+        .messageInput {
         margin-top: 15px;
         margin-bottom: 15px;
     }
@@ -148,9 +148,9 @@
     <div class="row">
         <div class="col-md-6" style="text-align: center;">
             <h3 style="color: white;"><strong>Community & links</strong></h3>
-            <span style="color: #0047AB;">Find us on <a style="color:white"
-                href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> as well as on <a
-                    style="color:orange" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> to see
+            <span style="color: darkblue;">Find us on <a style="color:white"
+                href="https://www.facebook.com/Cobalt-Keep-Miniatures-110020873853563/" target="_blank" rel="noopener">Facebook</a> as well as on <a
+                    style="color:orange" href="https://www.instagram.com/cobaltkeepminiatures/" target="_blank" rel="noopener">Instagram</a> to see
                 our previous works as well as links to the communities we are apart of.</span>
         </div>
         <div class="d-flex col-md-6">
@@ -166,18 +166,18 @@
         <h1 style="color: white;"><strong>Message us directly!</strong></h1>
         <div class="row">
             <div id="message">
-                <span style="color: white;">If you have any questions that we may not have answered please do use the form below to send a message directly to our team!</span>
+                <span style="color: white;">If you have any questions please fill out the form below to send a message directly to our team!</span>
             </div>
         </div>
         <br>
         <br>
-        <div  style="display: block;">
+        <div class="messageInput" style="display: block;">
             <input style="display:table-cell; width:100%; align-self: center;" type="text" placeholder="Name*" required="" [(ngModel)]="name">
         </div>
-        <div  style="display: block;">
+        <div  class="messageInput" style="display: block;">
             <input style="display:table-cell; width:100%" type="text" placeholder="Email*" required="" [(ngModel)]="email">
         </div>
-        <div  style="display: block;">
+        <div  class="messageInput" style="display: block;">
             <textarea style="width: 100%;display: block;align-self: center;" autocomplete="off" class="input input--full input--textarea input--higher-textarea" [(ngModel)]="message" placeholder="Message*" required=""></textarea>
         </div>
         <br>
