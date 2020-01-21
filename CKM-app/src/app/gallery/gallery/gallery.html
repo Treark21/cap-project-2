@@ -20,7 +20,9 @@
             }
 
         }
-
+        .row:before, .row:after {
+            display: none !important;
+        }
         @media screen and (min-width: 450px) and (max-width: 630px) {
             #header {
                 background-image: url(/assets/images/banner2.jpg);
@@ -151,42 +153,42 @@
 
  <div class="container">
     <div id="gallery" class="row img-fluid">
-        <img class="col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0660.JPG" (click)="open(0)"
+        <img class="col-md-3 col-xs-12 level-3 aos img-responsive" src="../../../assets/images/IMG_0660.JPG" (click)="open(0)"
              />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0661.JPG" (click)="open(1)"
+        <img class=" col-md-3 col-xs-12 level-3 aos img-responsive" src="../../../assets/images/IMG_0661.JPG" (click)="open(1)"
             />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0662.JPG" (click)="open(2)"
+        <img class=" col-md-3 col-xs-12 level-3 aos img-responsive" src="../../../assets/images/IMG_0662.JPG" (click)="open(2)"
              />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0664.JPG" (click)="open(3)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0665.JPG" (click)="open(4)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0667.JPG" (click)="open(5)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0668.JPG" (click)="open(6)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0672.JPG" (click)="open(7)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0675.JPG" (click)="open(8)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0676.JPG" (click)="open(9)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0677.JPG" (click)="open(10)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0678.JPG" (click)="open(11)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0679.JPG" (click)="open(12)" />
-        <img class=" col-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0681.JPG" (click)="open(13)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0664.JPG" (click)="open(3)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0665.JPG" (click)="open(4)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0667.JPG" (click)="open(5)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0668.JPG" (click)="open(6)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0672.JPG" (click)="open(7)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0675.JPG" (click)="open(8)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0676.JPG" (click)="open(9)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0677.JPG" (click)="open(10)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0678.JPG" (click)="open(11)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0679.JPG" (click)="open(12)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-3 aos" src="../../../assets/images/IMG_0681.JPG" (click)="open(13)" />
 
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0682.JPG" (click)="open(14)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0683.JPG" (click)="open(15)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0684.JPG" (click)="open(16)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0685.JPG" (click)="open(17)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0686.JPG" (click)="open(18)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0687.JPG" (click)="open(19)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0692.JPG" (click)="open(20)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0694.JPG" (click)="open(21)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0695.JPG" (click)="open(22)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0696.JPG" (click)="open(23)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0698.JPG" (click)="open(24)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0699.JPG" (click)="open(25)" />
-        <img class=" col-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0702.JPG" (click)="open(26)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0682.JPG" (click)="open(14)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0683.JPG" (click)="open(15)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0684.JPG" (click)="open(16)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0685.JPG" (click)="open(17)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0686.JPG" (click)="open(18)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0687.JPG" (click)="open(19)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0692.JPG" (click)="open(20)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0694.JPG" (click)="open(21)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0695.JPG" (click)="open(22)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0696.JPG" (click)="open(23)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0698.JPG" (click)="open(24)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0699.JPG" (click)="open(25)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-2 40k" src="../../../assets/images/IMG_0702.JPG" (click)="open(26)" />
 
-        <img class=" col-md-3 col-xs-12 level-1 aos" src="../../../assets/images/IMG_0708.JPG" (click)="open(27)" />
-        <img class=" col-md-3 col-xs-12 level-1 aos" src="../../../assets/images/IMG_0709.JPG" (click)="open(28)" />
-        <img class=" col-md-3 col-xs-12 level-1 aos" src="../../../assets/images/IMG_0710.JPG" (click)="open(29)" />
-        <img class=" col-md-3 col-xs-12 level-1 aos" src="../../../assets/images/IMG_0711.JPG" (click)="open(30)" /> 
+        <img class=" img-responsivecol-md-3 col-xs-12 level-1 aos" src="../../../assets/images/IMG_0708.JPG" (click)="open(27)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-1 aos" src="../../../assets/images/IMG_0709.JPG" (click)="open(28)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-1 aos" src="../../../assets/images/IMG_0710.JPG" (click)="open(29)" />
+        <img class=" img-responsivecol-md-3 col-xs-12 level-1 aos" src="../../../assets/images/IMG_0711.JPG" (click)="open(30)" /> 
 
 
 
