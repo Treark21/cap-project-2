@@ -86,3 +86,27 @@ export const toEmail = functions.https.onCall(async (data, context) => {
 
 });
 
+export const genericEmail2 = functions.https.onCall(async (data, context) => {
+
+    const msg = {
+        to: 'context.auth.token.email',
+        from: 'cobaltkeepminis@gmail.com',
+        templateId: TEMPLATE_ID,
+        dynamic_template_data: {
+            subject: data.subject,
+            name: data.name,
+            message: data.text,
+            
+        },
+       
+    };
+
+    await sgMail.send(msg);
+
+    // Handle errors here
+
+    // Response must be JSON serializable
+    return { success: true };
+
+});
+

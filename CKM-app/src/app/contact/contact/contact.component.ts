@@ -13,7 +13,8 @@ export class ContactComponent {
   email: string;
   password: string;
   name: string;
-message: string;
+  message: string;
+  isShow2: boolean = true;
   constructor(public authenticationService: AuthenticationService,public afAuth: AngularFireAuth, private fun: AngularFireFunctions) { }
 
   signUp() {
@@ -32,6 +33,9 @@ message: string;
   signOut() {
     this.authenticationService.SignOut();
   }
+  toggleDisplay(){
+    this.isShow2 = !this.isShow2
+  }
   sendEmail(){
     const callable = this.fun.httpsCallable('genericEmail');
     const message = this.message
@@ -48,5 +52,6 @@ message: string;
     this.message = null
     this.email = null
     this.name = null
+    this.isShow2 = !this.isShow2;
   }
   }

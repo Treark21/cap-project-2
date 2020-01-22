@@ -127,7 +127,7 @@
         <ul class="navbar-nav mx-auto">
             <li class="nav-items">
                 <a class=" nav-link" style="color: #0047AB;" routerLink="/user-profile"
-                    routerLinkActive="active">User Profile</a>
+                    routerLinkActive="active">Request a Quote</a>
             </li>
             <li class="nav-items">
                 <a class="nav-link" style="color: #0047AB;" routerLink="/"
@@ -162,7 +162,7 @@
     <br>
     <br>
     <br>
-    <div style="text-align: center;">
+    <div style="text-align: center;" *ngIf=isShow2>
         <h1 style="color: white;"><strong>Message us directly!</strong></h1>
         <div class="row">
             <div id="message">
@@ -184,6 +184,13 @@
         <br>
         <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" [disabled]="!email || !name || !message"
                     (click)="sendEmail()">Message us!</button>
+    </div>
+    <div class="container" *ngIf=!isShow2>
+        <h1 style="color:white;text-align: center;">Thank you for your interest!</h1>
+        <p style="color: #0047AB;text-align: center;">Our team will reply back as soon as they can! If you wish to submit another question, please click the button below</p>
+        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                
+                (click)="toggleDisplay()">Send a Message</button>
     </div>
 </div>
 

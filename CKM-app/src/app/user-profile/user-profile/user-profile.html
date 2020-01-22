@@ -215,7 +215,7 @@
         <ul class="navbar-nav mx-auto">
             <li class="nav-items">
                 <a class=" nav-link" style="color: whitesmoke;" routerLink="/user-profile"
-                    routerLinkActive="active">User Profile</a>
+                    routerLinkActive="active">Request a Quote</a>
 
             </li>
             <li class="nav-items">
@@ -231,7 +231,7 @@
     <div id="header" class="jumbotron"
         style="width: 100%;text-align: center; background-size: 100%; background-image: url(/assets/images/banner.jpg);">
         <h1 class="display-4" style="text-align: center; color: maroon;"><strong>
-                User Profile
+                Request a Quote
             </strong></h1>
        
     </div>
@@ -251,7 +251,7 @@
           
             <br>
             <br>
-            <div class="container" >
+            <div class="container" *ngIf=isShow>
                 <h1 align="center">Ask for a Quote!</h1>
                 <div class="row">
 
@@ -335,7 +335,13 @@
                 </div>
 
             </div>
-
+            <div class="container" *ngIf=!isShow>
+                <h1 style="color:white;text-align: center;">Congratulations on your successful quote submission!</h1>
+                <p style="color: #0047AB;text-align: center;">Our team will reply back as soon as they can! If you wish to submit another request for a quote please click the button below</p>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                        
+                        (click)="toggleDisplay()">Request Quote!</button>
+            </div>
 
 
 

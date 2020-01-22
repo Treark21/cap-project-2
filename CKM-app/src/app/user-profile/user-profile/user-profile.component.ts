@@ -24,7 +24,7 @@ export class UserProfileComponent  {
   email: string;
   password: string;
   isShow: boolean = true;
-  isShow2: boolean = true;
+  
   upload: any[];
   name: string;
   models: string;
@@ -109,8 +109,9 @@ export class UserProfileComponent  {
     this.email = '';
     
 }
-
-  
+  toggleDisplay(){
+    this.isShow = !this.isShow
+  }
   loginWithGoogle() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
@@ -121,7 +122,7 @@ export class UserProfileComponent  {
   signOut() {
     this.authenticationService.SignOut();
   }
- 
+  
   sendEmail2() {
     const callable = this.fun.httpsCallable('toEmail');
     const message = this.message;
@@ -153,8 +154,10 @@ export class UserProfileComponent  {
     this.basing = null;
     this.country = null;
     this.scheme = null;
+    this.isShow = !this.isShow;
+    
     
     
   }
-  
+ 
 }
